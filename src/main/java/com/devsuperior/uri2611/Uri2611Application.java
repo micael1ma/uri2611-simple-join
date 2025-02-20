@@ -25,10 +25,10 @@ public class Uri2611Application implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		List<MovieMinProjection> list = repository.serach1("Action");
-//		List<MovieMinDTO> result1 = list.stream().map(x -> new MovieMinDTO(x)).collect(Collectors.toList());
+		List<MovieMinDTO> result1 = list.stream().map(x -> new MovieMinDTO(x)).collect(Collectors.toList());
 
 		System.out.println("Resultado SQL raiz:");
-		for (MovieMinProjection obj : list) {
+		for (MovieMinDTO obj : result1) {
 			System.out.println(obj);
 		}
 	}

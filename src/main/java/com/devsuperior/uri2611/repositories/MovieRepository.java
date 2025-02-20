@@ -12,6 +12,6 @@ public interface MovieRepository extends JpaRepository<Movie, Long> {
     @Query(nativeQuery = true, value = "SELECT movies.id, movies.name "
             + "FROM movies "
             + "INNER JOIN genres ON movies.id_genres = genres.id "
-            + "WHERE description = :genreName;")
+            + "WHERE description = :genreName")
     List<MovieMinProjection> serach1(String genreName);
 }
